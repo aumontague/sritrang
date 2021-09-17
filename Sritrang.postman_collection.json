@@ -1,0 +1,2273 @@
+{
+	"info": {
+		"_postman_id": "f7cf3eff-314e-414a-a5eb-fc615958fb8f",
+		"name": "Sritrang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Branch",
+			"item": [
+				{
+					"name": "branchInformationCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\" : \"COM01\",\r\n    \"name\" : \"Test001\",\r\n    \"no\" : \"T001\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"remark\" : \"Note Test\",\r\n    \"status\" : 1 ,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "companyList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/company/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"company",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companyDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"COM01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/company/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"company",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companyCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\" : \"STA\",\r\n    \"no\" : \"00001\",\r\n    \"name\" : \"SRI TRANG AGRO\",\r\n    \"phone\" : \"0817669019\",\r\n    \"fax\" : \"021234567\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"status\" : \"1\",\r\n    \"remark\" : \"หมายเหตุ\",\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/company/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"company",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companyUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"COM01\",\r\n    \"code\" : \"STA\",\r\n    \"no\" : \"00002\",\r\n    \"name\" : \"SRI TRANG AGRO\",\r\n    \"phone\" : \"0817669019\",\r\n    \"fax\" : \"021234567\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"status\" : \"1\",\r\n    \"remark\" : \"หมายเหตุ\",\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/company/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"company",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companyDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"COM01\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/company/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"company",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commodity",
+			"item": [
+				{
+					"name": "commodityCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"commodity001\",\r\n    \"name\" : \"commodity test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/commodity/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commodity",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commodityUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\",\r\n    \"no\" : \"commodity001\",\r\n    \"name\" : \"commodity test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/commodity/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commodity",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commodityDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/commodity/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commodity",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commodityDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/commodity/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commodity",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commodityList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/commodity/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commodity",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Container",
+			"item": [
+				{
+					"name": "containerCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"size\" : \"20'\",\r\n    \"desc\" : \"description\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/container/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"container",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "containerUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"e02de757-a6cf-406a-a8b0-fd0eeb92838b\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"size\" : \"22'\",\r\n    \"desc\" : \"description\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/container/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"container",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "containerDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/container/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"container",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "containerDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"e02de757-a6cf-406a-a8b0-fd0eeb92838b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/container/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"container",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "containerList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/container/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"container",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "customerList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/customer/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerInformationUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"cus002\",\r\n    \"name\" : \"Test002\",\r\n    \"code\" : \"T002\",\r\n    \"email\" : \"Test@gmail.com\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"contract\" : \"รามอินทรา\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"remark\" : \"Note Test\",\r\n    \"status\" : \"Y\" ,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerInformationDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"cus002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/detail/information",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"detail",
+								"information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerInformationCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Test001\",\r\n    \"code\" : \"T001\",\r\n    \"email\" : \"Test@gmail.com\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"contract\" : \"รามอินทรา\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"remark\" : \"Note Test\",\r\n    \"status\" : \"1\" ,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerFactoryList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"cus002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/factory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"factory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerFactoryCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cusId\" : \"cus002\",\r\n    \"code\" : \"F001\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"status\" : \"Y\",\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/factory/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"factory",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"cus001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerFactoryUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"36e9e62f-dd1b-447d-880d-4fd4ad9f088a\",\r\n    \"cusId\" : \"cus002\",\r\n    \"code\" : \"F002\",\r\n    \"address\" : \"ที่อยู่ในกรุงเทพ\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"status\" : \"Y\"  ,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/factory/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"factory",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customerDeleteFactory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"36e9e62f-dd1b-447d-880d-4fd4ad9f088a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customer/factory/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customer",
+								"factory",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Depots",
+			"item": [
+				{
+					"name": "depotsCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/depots/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"depots",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depotsUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1a3527ab-78c5-411d-86a4-62b6f4f24f7b\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/depots/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"depots",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depotsDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/depots/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"depots",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depotsDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1a3527ab-78c5-411d-86a4-62b6f4f24f7b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/depots/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"depots",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "depotsList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/depots/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"depots",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "employeeList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/employee/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employeeDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employeeCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"001\",\r\n    \"name\" : \"Kitituch\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"phone\" : \"0894496362\",\r\n    \"fax\" : \"021234567\",\r\n    \"companyId\" : \"COM01\",\r\n    \"branch\" : \"B001\",\r\n    \"depart\" : \"D01\",\r\n    \"userLogin\" : \"admin\",\r\n    \"password\" : \"12301230\",\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employeeDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employeeUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\",\r\n    \"no\" : \"001\",\r\n    \"name\" : \"Kitituch\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"phone\" : \"1234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"companyId\" : \"COM01\",\r\n    \"branch\" : \"B001\",\r\n    \"depart\" : \"D01\",\r\n    \"userLogin\" : \"admin\",\r\n    \"password\" : \"\",\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employee/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employee",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forwarder",
+			"item": [
+				{
+					"name": "forwarderCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/forwarder/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"forwarder",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forwarderUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/forwarder/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"forwarder",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forwarderDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/forwarder/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"forwarder",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forwarderDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/forwarder/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"forwarder",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forwarderList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/forwarder/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"forwarder",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Liners",
+			"item": [
+				{
+					"name": "linersCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/liners/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"liners",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linersUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"a56d51fb-bd4d-4c86-bc64-6f7992509c29\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/liners/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"liners",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linersDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/liners/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"liners",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linersDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/liners/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"liners",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linersList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/liners/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"liners",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pol / Pod",
+			"item": [
+				{
+					"name": "polpodCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"countryId\" : 2,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/polpod/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"polpod",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "polpodUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"32a46862-cc3f-416f-bbd4-2e8bd6bd1d70\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"countryId\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/polpod/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"polpod",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "polpodDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"32a46862-cc3f-416f-bbd4-2e8bd6bd1d70\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "polpodDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"32a46862-cc3f-416f-bbd4-2e8bd6bd1d70\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/polpod/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"polpod",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "polpodList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/polpod/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"polpod",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Terms",
+			"item": [
+				{
+					"name": "termsCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"22e9ae23-f88c-487e-8cb5-efeb5a8f1cba\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/terms/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Terminal",
+			"item": [
+				{
+					"name": "terminalCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"countryId\" : 2,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terminal/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terminal",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "terminalUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"a56d51fb-bd4d-4c86-bc64-6f7992509c29\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"countryId\" : 1,\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terminal/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terminal",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "terminalDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terminal/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terminal",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "terminalDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terminal/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terminal",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "terminalList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/terminal/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terminal",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transshipment",
+			"item": [
+				{
+					"name": "transshipmentCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transshipment/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transshipment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transshipmentUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"22e9ae23-f88c-487e-8cb5-efeb5a8f1cba\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transshipment/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transshipment",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transshipmentDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transshipment/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transshipment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transshipmentDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transshipment/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transshipment",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transshipmentList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/transshipment/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transshipment",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transport",
+			"item": [
+				{
+					"name": "termsCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"22e9ae23-f88c-487e-8cb5-efeb5a8f1cba\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/terms/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "termsList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/terms/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"terms",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "vehicleCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"groupId\" : \"G001\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vehicle/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicle",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicleUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"67283c6b-06e5-4f21-b109-217545b297dc\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"groupId\" : \"G001\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vehicle/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicle",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicleDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vehicle/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicle",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicleDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"67283c6b-06e5-4f21-b109-217545b297dc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vehicle/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicle",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicleList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/vehicle/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicle",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"12301230\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/userLogin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"userLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sample",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"1230\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/sample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"sample"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
