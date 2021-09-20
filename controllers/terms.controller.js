@@ -36,7 +36,7 @@ module.exports = (app) => {
 
     app.post('/api/terms/delete', function(req, res) {
         var dataPost = req.body;        
-        var result = employee.termsDelete(req, dataPost, _).then(function(result) {
+        var result = terms.termsDelete(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);

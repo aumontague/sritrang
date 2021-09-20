@@ -2,16 +2,16 @@ var uuid = require('uuid');
 var moment = require('moment');
 const Database = require('./Database');
 
-class branch {
+class price {
 
     constructor(){
         this.db = Database;
     }
 
-    branchList(req, dataPost, _) {
+    priceList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT BranchNo, BranchName FROM Branch where Status = ?'
-            this.db.query(_query, ['Y']) 
+            var _query = 'SELECT * FROM Price ORDER BY CreateDate DESC'
+            this.db.query(_query) 
             .then(resp => {
                 resolve(resp)
             }).catch(err => {
@@ -21,85 +21,9 @@ class branch {
         });
     }
 
-    BranchInformationDetail(req, dataPost, _) {
-        return new Promise((resolve, reject) => { 
-            var _query = 'select * from Branch where BranchId = ?'
-            this.db.query(_query, [dataPost.id]) 
-            .then(resp => {
-                resolve(resp[0])
-            }).catch(err => {
-                reject({"status" : false})
-                console.log(err);
-            }) 
-        });
-    }
-
-    branchInsertInformation(req, dataPost, _) {
-        return new Promise((resolve, reject) => { 
-            var _query = 'INSERT INTO Branch(BranchId, BranchNo, BranchName, BranchAddress, BranchMobile, BranchFax, CompanyId, Remark, Status, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?,?)'
-            this.db.query(_query, [uuid.v4(), dataPost.no, dataPost.name, dataPost.address, dataPost.phone, dataPost.fax, dataPost.companyId, dataPost.remark, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
-            .then(resp => {
-                if(resp.affectedRows > 0){
-                    var result = {
-                        "status"    : true,
-                        "text"      : "Success"
-                    }
-                    resolve(result)
-                }else{
-                    var result = {
-                        "status"    : false,
-                        "text"      : "Fail"
-                    }
-                    reject(result)
-                }
-            }).catch(err => {
-                reject({"status" : false})
-                console.log(err);
-            }) 
-        });
-    }
-
-    branchUpdateInformation(req, dataPost, _) {
-        return new Promise((resolve, reject) => { 
-            var _query = 'UPDATE Branch SET BranchName = ?, BranchNo = ?, BranchAddress = ?, CompanyId = ?, BranchMobile = ?, BranchFax = ?, Remark = ?, Status = ?, ModID = ?, ModDate = ? WHERE BranchId = ?'
-            this.db.query(_query, [dataPost.name, dataPost.no, dataPost.address, dataPost.companyId, dataPost.phone, dataPost.fax, dataPost.remark, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id]) 
-            .then(resp => {
-                if(resp.affectedRows > 0){
-                    var result = {
-                        "status"    : true,
-                        "text"      : "Success"
-                    }
-                    resolve(result)
-                }else{
-                    var result = {
-                        "status"    : false,
-                        "text"      : "Fail"
-                    }
-                    reject(result)
-                }
-            }).catch(err => {
-                reject({"status" : false})
-                console.log(err);
-            }) 
-        });
-    }
-
-    branchWarehouseList(req, dataPost, _) {
+    priceDetails(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT * FROM Warehouse where Status = ? and BranchId = ?'
-            this.db.query(_query, [1, dataPost.branchId]) 
-            .then(resp => {
-                resolve(resp)
-            }).catch(err => {
-                reject({"status" : false})
-                console.log(err);
-            }) 
-        });
-    }
-
-    branchWarehouseDetail(req, dataPost, _) {
-        return new Promise((resolve, reject) => {
-            var _query = 'SELECT * FROM Warehouse where WarehouseId = ?'
+            var _query = 'SELECT * FROM Price WHERE PriceId = ?'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
                 resolve(resp)
@@ -110,10 +34,10 @@ class branch {
         });
     }
 
-    branchInsertWarehouse(req, dataPost, _) {
+    priceInsert(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'INSERT INTO Warehouse(WarehouseId, BranchId, WarehouseName, WarehouseNo, Status, Remark, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?,?)'
-            this.db.query(_query, [uuid.v4(), dataPost.branchId, dataPost.name, dataPost.no, dataPost.status, dataPost.remark, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
+            var _query = 'INSERT INTO Price(PriceId, PriceNo, LocationFrom, GroupFrom, LocationTo, GroupTo, PriceDate, ContainerTypeId, Status, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?,?)'
+            this.db.query(_query, [uuid.v4(), dataPost.no, dataPost.from, dataPost.groupFrom, dataPost.to, dataPost.groupTo, dataPost.priceDate, dataPost.typeId, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
             .then(resp => {
                 if(resp.affectedRows > 0){
                     var result = {
@@ -135,10 +59,13 @@ class branch {
         });
     }
 
-    branchUpdateWarehouse(req, dataPost, _) {
+    priceUpdate(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'Update Warehouse SET BranchId = ?, WarehouseName = ?, WarehouseNo = ?, Remark = ?, Status = ?, ModID = ?, ModDate = ? WHERE WarehouseId = ?'
-            this.db.query(_query, [dataPost.branchId, dataPost.name, dataPost.no, dataPost.remark, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id]) 
+            var _query = 'UPDATE Price SET PriceNo = ?, LocationFrom = ?, GroupFrom = ?, LocationTo = ?, GroupTo = ?, Status = ?, PriceDate = ?, ContainerTypeId = ?, ModID = ?, ModDate = ? WHERE PriceId = ?'
+            var value = [
+                dataPost.no, dataPost.from, dataPost.groupFrom, dataPost.to, dataPost.groupTo, dataPost.status, dataPost.priceDate, dataPost.typeId, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
+            ]
+            this.db.query(_query, value) 
             .then(resp => {
                 if(resp.affectedRows > 0){
                     var result = {
@@ -160,16 +87,24 @@ class branch {
         });
     }
 
-    branchDeleteWarehouse(req, dataPost, _) {
+    priceDelete(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'DELETE FROM Warehouse WHERE WarehouseId = ?'
+            var _query = 'DELETE FROM Price WHERE PriceId = ?'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
-                var result = {
-                    "status"    : true,
-                    "text"      : "Delete Success."
+                if(resp.affectedRows > 0){
+                    var result = {
+                        "status"    : true,
+                        "text"      : "Success"
+                    }
+                    resolve(result)
+                }else{
+                    var result = {
+                        "status"    : false,
+                        "text"      : "Fail"
+                    }
+                    reject(result)
                 }
-                resolve(result);
             }).catch(err => {
                 reject({"status" : false})
                 console.log(err);
@@ -177,22 +112,110 @@ class branch {
         });
     }
 
-    branchDelete(req, dataPost, _) {
-        return new Promise((resolve, reject) => { 
-            var _query = 'DELETE FROM Branch WHERE BranchId = ?'
+    priceDetailList(req, dataPost, _) {
+        return new Promise((resolve, reject) => {
+            var _query = 'SELECT * FROM PriceDetail WHERE PriceId = ? ORDER BY CreateDate DESC'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
-                var result = {
-                    "status"    : true,
-                    "text"      : "Delete Success."
-                }
-                resolve(result);
+                resolve(resp)
             }).catch(err => {
                 reject({"status" : false})
                 console.log(err);
             }) 
         });
     }
+
+    priceDetailInsert(req, dataPost, _) {
+        return new Promise((resolve, reject) => {
+            var _query = 'INSERT INTO PriceDetail(PriceDetailId, PriceId, TransportId, Amount, Status, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?)'
+            this.db.query(_query, [uuid.v4(), dataPost.priceId, dataPost.tranId, dataPost.amount, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
+            .then(resp => {
+                if(resp.affectedRows > 0){
+                    var result = {
+                        "status"    : true,
+                        "text"      : "Success"
+                    }
+                    resolve(result)
+                }else{
+                    var result = {
+                        "status"    : false,
+                        "text"      : "Fail"
+                    }
+                    reject(result)
+                }
+            }).catch(err => {
+                reject({"status" : false})
+                console.log(err);
+            }) 
+        });
+    }
+
+    priceDetailUpdate(req, dataPost, _) {
+        return new Promise((resolve, reject) => {
+            var _query = 'UPDATE PriceDetail SET PriceId = ?, TransportId = ?, Amount = ?, Status = ?, ModID = ?, ModDate = ? WHERE PriceDetailId = ?'
+            var value = [
+                dataPost.priceId, dataPost.tranId, dataPost.amount, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
+            ]
+            this.db.query(_query, value) 
+            .then(resp => {
+                if(resp.affectedRows > 0){
+                    var result = {
+                        "status"    : true,
+                        "text"      : "Success"
+                    }
+                    resolve(result)
+                }else{
+                    var result = {
+                        "status"    : false,
+                        "text"      : "Fail"
+                    }
+                    reject(result)
+                }
+            }).catch(err => {
+                reject({"status" : false})
+                console.log(err);
+            }) 
+        });
+    }
+
+    priceDetailDelete(req, dataPost, _) {
+        return new Promise((resolve, reject) => {
+            var _query = 'DELETE FROM PriceDetail WHERE PriceDetailId = ?'
+            this.db.query(_query, [dataPost.id]) 
+            .then(resp => {
+                if(resp.affectedRows > 0){
+                    var result = {
+                        "status"    : true,
+                        "text"      : "Success"
+                    }
+                    resolve(result)
+                }else{
+                    var result = {
+                        "status"    : false,
+                        "text"      : "Fail"
+                    }
+                    reject(result)
+                }
+            }).catch(err => {
+                reject({"status" : false})
+                console.log(err);
+            }) 
+        });
+    }
+
+    priceDetailDetail(req, dataPost, _) {
+        return new Promise((resolve, reject) => {
+            var _query = 'SELECT * FROM PriceDetail WHERE PriceDetailId = ?'
+            this.db.query(_query, [dataPost.id]) 
+            .then(resp => {
+                resolve(resp)
+            }).catch(err => {
+                reject({"status" : false})
+                console.log(err);
+            }) 
+        });
+    }
+
 
 }
-exports.branch = branch;
+exports.price = price;

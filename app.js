@@ -44,7 +44,8 @@ require('./controllers/depots.controller.js')(app);
 require('./controllers/container.controller.js')(app);
 require('./controllers/vehicle.controller.js')(app);
 require('./controllers/branch.controller.js')(app);
-// require('./controllers/transport.controller.js')(app);
+require('./controllers/transport.controller.js')(app);
+require('./controllers/price.controller.js')(app);
 
 http.listen(env.app.port, function() {
     console.log(env.app.url + ":" + env.app.port);

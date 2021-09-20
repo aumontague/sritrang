@@ -8,16 +8,16 @@ var branch = new con_branch.branch();
 
 module.exports = (app) => {
 
-    app.get('/api/branch/list', function(req, res) {
-        var dataPost = req.body;
+    // app.get('/api/branch/list', function(req, res) {
+    //     var dataPost = req.body;
         
-        var result = branch.branchList(req, dataPost, _).then(function(result) {
-            res.json(result);
-        }).catch(function(error) {
-            res.send('Error: ' + error);
-        });
+    //     var result = branch.branchList(req, dataPost, _).then(function(result) {
+    //         res.json(result);
+    //     }).catch(function(error) {
+    //         res.send('Error: ' + error);
+    //     });
 
-    })
+    // })
 
     app.post('/api/branch/create', function(req, res) {
         var dataPost = req.body;        
@@ -39,10 +39,10 @@ module.exports = (app) => {
 
     })
 
-    app.post('/api/branch/detail/information', function(req, res) {
+    app.post('/api/branch/detail', function(req, res) {
         var dataPost = req.body;
         
-        var result = branch.branchInformation(req, dataPost, _).then(function(result) {
+        var result = branch.BranchInformationDetail(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
@@ -50,37 +50,37 @@ module.exports = (app) => {
 
     })
 
-    app.post('/api/branch/factory', function(req, res) {
+    app.post('/api/branch/warehouse/list', function(req, res) {
         var dataPost = req.body;        
-        var result = branch.branchFactory(req, dataPost, _).then(function(result) {
+        var result = branch.branchWarehouseList(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
         });
     })
 
-    app.post('/api/branch/factory/create', function(req, res) {
+    app.post('/api/branch/warehouse/create', function(req, res) {
         var dataPost = req.body;        
-        var result = branch.branchInsertFactory(req, dataPost, _).then(function(result) {
+        var result = branch.branchInsertWarehouse(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
         });
     })
 
-    app.post('/api/branch/factory/update', function(req, res) {
+    app.post('/api/branch/warehouse/update', function(req, res) {
         var dataPost = req.body;        
-        var result = branch.branchUpdateFactory(req, dataPost, _).then(function(result) {
+        var result = branch.branchUpdateWarehouse(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
         });
     })
 
-    app.post('/api/branch/detail/factory', function(req, res) {
+    app.post('/api/branch/warehouse/detail', function(req, res) {
         var dataPost = req.body;
         
-        var result = branch.branchFactory(req, dataPost, _).then(function(result) {
+        var result = branch.branchWarehouseDetail(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
@@ -88,10 +88,10 @@ module.exports = (app) => {
 
     })
 
-    app.post('/api/branch/factory/delete', function(req, res) {
+    app.post('/api/branch/warehouse/delete', function(req, res) {
         var dataPost = req.body;
         
-        var result = branch.branchDeleteFactory(req, dataPost, _).then(function(result) {
+        var result = branch.branchDeleteWarehouse(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
