@@ -10,7 +10,7 @@ class employee {
 
     employeeList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT * FROM Employee'
+            var _query = 'SELECT e.EmpId, e.EmpNo, e.EmpName, e.EmpLastName, b.BranchName, c.CompanyName, d.DepartmentdName, r.RoleName FROM Employee e INNER JOIN Branch b ON e.BranchId = b.BranchId INNER JOIN Company c ON e.CompanyId = c.CompanyId INNER JOIN Department d ON e.DepartmentId = d.DepartmentId INNER JOIN Role r ON e.RoleId = r.RoleId ORDER BY e.CreateDate DESC'
             this.db.query(_query) 
             .then(resp => {
                 resolve(resp)

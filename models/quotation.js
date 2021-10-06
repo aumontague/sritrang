@@ -2,38 +2,38 @@ var uuid = require('uuid');
 var moment = require('moment');
 const Database = require('./Database');
 
-class price {
+class quotation {
 
     constructor(){
         this.db = Database;
     }
 
-    priceList(req, dataPost, _) {
-        return new Promise((resolve, reject) => {
-            var _query = 'SELECT p.PriceNo, p.LocationFrom, p.LocationTo, p.Status, e.EmpName, e.EmpLastName, SUM(pd.Amount) FROM Price p INNER JOIN Employee e ON p.CreateId = e.EmpId INNER JOIN PriceDetail pd ON p.PriceId = pd.PriceId ORDER BY p.CreateDate DESC'
-            this.db.query(_query) 
-            .then(resp => {
-                var result = {
-                    "code"      : 200,
-                    "status"    : true,
-                    "data"      : resp,
-                    "text"      : "Success"
-                }
-                resolve(result)
-            }).catch(err => {
-                var result = {
-                    "status"    : false,
-                    "msg"       : err
-                }
-                reject(result)
-                console.log(err);
-            }) 
-        });
-    }
+    // priceList(req, dataPost, _) {
+    //     return new Promise((resolve, reject) => {
+    //         var _query = 'SELECT p.PriceNo, p.LocationFrom, p.LocationTo, p.Status, e.EmpName, e.EmpLastName, SUM(pd.Amount) FROM Price p INNER JOIN Employee e ON p.CreateId = e.EmpId INNER JOIN PriceDetail pd ON p.PriceId = pd.PriceId ORDER BY p.CreateDate DESC'
+    //         this.db.query(_query) 
+    //         .then(resp => {
+    //             var result = {
+    //                 "code"      : 200,
+    //                 "status"    : true,
+    //                 "data"      : resp,
+    //                 "text"      : "Success"
+    //             }
+    //             resolve(result)
+    //         }).catch(err => {
+    //             var result = {
+    //                 "status"    : false,
+    //                 "msg"       : err
+    //             }
+    //             reject(result)
+    //             console.log(err);
+    //         }) 
+    //     });
+    // }
 
-    priceDetails(req, dataPost, _) {
+    quotationDetails(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT * FROM Price WHERE PriceId = ?'
+            var _query = 'SELECT * FROM Quotation WHERE QuotationId = ?'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
                 resolve(resp)
@@ -44,10 +44,10 @@ class price {
         });
     }
 
-    priceInsert(req, dataPost, _) {
+    quotationInsert(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'INSERT INTO Price(PriceId, PriceNo, LocationFrom, GroupFrom, LocationTo, GroupTo, PriceDate, ContainerTypeId, Status, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?,?)'
-            this.db.query(_query, [uuid.v4(), dataPost.no, dataPost.from, dataPost.groupFrom, dataPost.to, dataPost.groupTo, dataPost.priceDate, dataPost.typeId, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
+            var _query = 'INSERT INTO Quotation(QuotationId, QuotationNo, QuotationDate, CustomerId, FactoryId, Telephone, Fax, Email, ContractName, Remark, QuotationDateFrom, QuotationDateTo, EmpSalesId, LocationFrom, GroupFrom, LocationTo, GroupTo, InternalNote, Status, CreateID, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+            this.db.query(_query, [uuid.v4(), dataPost.no, dataPost.quoDate, dataPost.cusId, dataPost.facId, dataPost.tel, dataPost.fax, dataPost.email, dataPost.contractName, dataPost.remark, dataPost.quoDateFrom, dataPost.quoDateTo, dataPost.saleId, dataPost.locationFrom, dataPost.groupFrom, dataPost.locationTo, dataPost.groupTo, dataPost.note, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
             .then(resp => {
                 if(resp.affectedRows > 0){
                     var result = {
@@ -69,11 +69,11 @@ class price {
         });
     }
 
-    priceUpdate(req, dataPost, _) {
+    quotationUpdate(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'UPDATE Price SET PriceNo = ?, LocationFrom = ?, GroupFrom = ?, LocationTo = ?, GroupTo = ?, Status = ?, PriceDate = ?, ContainerTypeId = ?, ModID = ?, ModDate = ? WHERE PriceId = ?'
+            var _query = 'UPDATE Quotation SET QuotationNo = ?, QuotationDate = ?, CustomerId = ?, FactoryId = ?, Telephone = ?, Fax = ?, Email = ?, ContractName = ?, Remark = ?, QuotationDateFrom = ?, QuotationDateTo = ?, EmpSalesId = ?, LocationFrom = ?, GroupFrom = ?, LocationTo = ?, GroupTo = ?, InternalNote = ?, Status = ?, ModID = ?, ModDate = ? WHERE QuotationId = ?'
             var value = [
-                dataPost.no, dataPost.from, dataPost.groupFrom, dataPost.to, dataPost.groupTo, dataPost.status, dataPost.priceDate, dataPost.typeId, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
+                dataPost.no, dataPost.quoDate, dataPost.cusId, dataPost.facId, dataPost.tel, dataPost.fax, dataPost.email, dataPost.contractName, dataPost.remark, dataPost.quoDateFrom, dataPost.quoDateTo, dataPost.saleId, dataPost.locationFrom, dataPost.groupFrom, dataPost.locationTo, dataPost.groupTo, dataPost.note, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
             ]
             this.db.query(_query, value) 
             .then(resp => {
@@ -97,9 +97,9 @@ class price {
         });
     }
 
-    priceDelete(req, dataPost, _) {
+    quotationDelete(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'DELETE FROM Price WHERE PriceId = ?'
+            var _query = 'DELETE FROM Quotation WHERE QuotationId = ?'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
                 if(resp.affectedRows > 0){
@@ -122,23 +122,23 @@ class price {
         });
     }
 
-    priceDetailList(req, dataPost, _) {
-        return new Promise((resolve, reject) => {
-            var _query = 'SELECT * FROM PriceDetail WHERE PriceId = ? ORDER BY CreateDate DESC'
-            this.db.query(_query, [dataPost.id]) 
-            .then(resp => {
-                resolve(resp)
-            }).catch(err => {
-                reject({"status" : false})
-                console.log(err);
-            }) 
-        });
-    }
+    // priceDetailList(req, dataPost, _) {
+    //     return new Promise((resolve, reject) => {
+    //         var _query = 'SELECT * FROM PriceDetail WHERE PriceId = ? ORDER BY CreateDate DESC'
+    //         this.db.query(_query, [dataPost.id]) 
+    //         .then(resp => {
+    //             resolve(resp)
+    //         }).catch(err => {
+    //             reject({"status" : false})
+    //             console.log(err);
+    //         }) 
+    //     });
+    // }
 
-    priceDetailInsert(req, dataPost, _) {
+    quotationDetailInsert(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'INSERT INTO PriceDetail(PriceDetailId, PriceId, TransportId, Amount, Status, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?)'
-            this.db.query(_query, [uuid.v4(), dataPost.priceId, dataPost.tranId, dataPost.amount, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
+            var _query = 'INSERT INTO QuotationDetail(QuotationDetailId, QuotationId, PriceId, ContainnerTypeId, Qty, Amount, Discount, TotalAmount, CreateId, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?)'
+            this.db.query(_query, [uuid.v4(), dataPost.quoId, dataPost.priceId, dataPost.containerId, dataPost.qty, dataPost.amount, dataPost.discount, dataPost.total, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
             .then(resp => {
                 if(resp.affectedRows > 0){
                     var result = {
@@ -160,11 +160,11 @@ class price {
         });
     }
 
-    priceDetailUpdate(req, dataPost, _) {
+    quotationDetailUpdate(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'UPDATE PriceDetail SET PriceId = ?, TransportId = ?, Amount = ?, Status = ?, ModID = ?, ModDate = ? WHERE PriceDetailId = ?'
+            var _query = 'UPDATE QuotationDetail SET PriceId = ?, ContainnerTypeId = ?, Qty = ?, Amount = ?, Discount = ?, TotalAmount = ?, ModID = ?, ModDate = ? WHERE QuotationDetailId = ?'
             var value = [
-                dataPost.priceId, dataPost.tranId, dataPost.amount, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
+                dataPost.priceId, dataPost.containerId, dataPost.qty, dataPost.amount, dataPost.discount, dataPost.total, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id
             ]
             this.db.query(_query, value) 
             .then(resp => {
@@ -188,9 +188,9 @@ class price {
         });
     }
 
-    priceDetailDelete(req, dataPost, _) {
+    quotationDetailDelete(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'DELETE FROM PriceDetail WHERE PriceDetailId = ?'
+            var _query = 'DELETE FROM QuotationDetail WHERE QuotationDetailId = ?'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
                 if(resp.affectedRows > 0){
@@ -213,9 +213,9 @@ class price {
         });
     }
 
-    priceDetailDetail(req, dataPost, _) {
+    quotationDetailDetail(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT * FROM PriceDetail WHERE PriceDetailId = ?'
+            var _query = 'SELECT * FROM QuotationDetail WHERE QuotationDetailId = ?'
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
                 resolve(resp)
@@ -225,7 +225,6 @@ class price {
             }) 
         });
     }
-
 
 }
-exports.price = price;
+exports.quotation = quotation;

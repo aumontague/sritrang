@@ -10,8 +10,8 @@ class branch {
 
     branchList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT BranchNo, BranchName FROM Branch where Status = ?'
-            this.db.query(_query, ['Y']) 
+            var _query = 'SELECT b.BranchId, b.BranchNo, b.BranchName, c.CompanyName FROM Branch b INNER JOIN Company c ON b.CompanyId = c.CompanyId WHERE b.Status = ? ORDER BY b.CreateDate DESC'
+            this.db.query(_query, ['1']) 
             .then(resp => {
                 resolve(resp)
             }).catch(err => {

@@ -1,31 +1,45 @@
 'use strict';
 
+const { table } = require('console');
 var fs = require('fs');
 const _ = require('lodash');
 
 var con_branch = require('../models/branch.js');
 var branch = new con_branch.branch();
 
+var con_check = require('../models/check.js');
+var checkNo = new con_check.checkvalue();
+
 module.exports = (app) => {
 
-    // app.get('/api/branch/list', function(req, res) {
-    //     var dataPost = req.body;
+    app.get('/api/branch/list', function(req, res) {
+        var dataPost = req.body;
         
-    //     var result = branch.branchList(req, dataPost, _).then(function(result) {
-    //         res.json(result);
-    //     }).catch(function(error) {
-    //         res.send('Error: ' + error);
-    //     });
-
-    // })
-
-    app.post('/api/branch/create', function(req, res) {
-        var dataPost = req.body;        
-        var result = branch.branchInsertInformation(req, dataPost, _).then(function(result) {
+        var result = branch.branchList(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);
         });
+
+    })
+
+    app.post('/api/branch/create', function(req, res) {
+        var dataPost = req.body;     
+        const table = "Branch";
+        const col = "BranchNo";
+        checkNo.checkNo(req, dataPost, _, table, col).then(function(result) {
+            if(result.status == true){
+                var result1 = branch.branchInsertInformation(req, dataPost, _).then(function(result) {
+                    res.json(result);
+                }).catch(function(error) {
+                    res.send('Error: ' + error);
+                });
+            }else{
+                res.send(result);
+            }
+        }).catch(function(error) {
+            res.send('Error: ' + error);
+        });  
     })
 
     app.post('/api/branch/update', function(req, res) {
@@ -61,11 +75,22 @@ module.exports = (app) => {
 
     app.post('/api/branch/warehouse/create', function(req, res) {
         var dataPost = req.body;        
-        var result = branch.branchInsertWarehouse(req, dataPost, _).then(function(result) {
-            res.json(result);
+        const table = "Warehouse";
+        const col = "WarehouseNo";
+
+        checkNo.checkNo(req, dataPost, _,table, col).then(function(result) {
+            if(result.status == true){
+                var result1 = branch.branchInsertWarehouse(req, dataPost, _).then(function(result) {
+                    res.json(result);
+                }).catch(function(error) {
+                    res.send('Error: ' + error);
+                });
+            }else{
+                res.send(result);
+            }
         }).catch(function(error) {
             res.send('Error: ' + error);
-        });
+        }); 
     })
 
     app.post('/api/branch/warehouse/update', function(req, res) {
