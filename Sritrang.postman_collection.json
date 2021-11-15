@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"companyId\" : \"COM01\",\r\n    \"name\" : \"Test001\",\r\n    \"no\" : \"T001\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"remark\" : \"Note Test\",\r\n    \"status\" : 1 ,\r\n    \"createId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"companyId\" : \"COM01\",\r\n    \"name\" : \"Test001\",\r\n    \"no\" : \"T002\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"remark\" : \"Note Test\",\r\n    \"status\" : 1 ,\r\n    \"createId\" : \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -33,6 +33,284 @@
 								"api",
 								"branch",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchInformationUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"B001\",\r\n    \"companyId\" : \"COM01\",\r\n    \"name\" : \"Test001\",\r\n    \"no\" : \"T001\",\r\n    \"address\" : \"รามคำแหง\",\r\n    \"phone\" : \"0891234567\",\r\n    \"fax\" : \"021234567\",\r\n    \"remark\" : \"Note Test\",\r\n    \"status\" : 1 ,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchInformationDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"B001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"B001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchWarehouseCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branchId\" : \"B001\",\r\n    \"name\" : \"Test001\",\r\n    \"remark\" : \"Note Test\",\r\n    \"no\" : \"Bt12345\",\r\n    \"status\" : 1 ,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/warehouse/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"warehouse",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchWarehouseList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branchId\" : \"B001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/warehouse/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"warehouse",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchWarehouseUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"0422a695-06ed-4e5a-9f13-354ddeb643ec\",\r\n    \"branchId\" : \"B001\",\r\n    \"name\" : \"Test001\",\r\n    \"remark\" : \"Note Test\",\r\n    \"no\" : \"Bt12345\",\r\n    \"status\" : 1 ,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/warehouse/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"warehouse",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchWarehouseDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"0422a695-06ed-4e5a-9f13-354ddeb643ec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/warehouse/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"warehouse",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchWarehouseDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"0422a695-06ed-4e5a-9f13-354ddeb643ec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/branch/warehouse/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"warehouse",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "branchList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/branch/list?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"branch",
+								"list"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
 							]
 						}
 					},
@@ -101,7 +379,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"code\" : \"STA\",\r\n    \"no\" : \"00001\",\r\n    \"name\" : \"SRI TRANG AGRO\",\r\n    \"phone\" : \"0817669019\",\r\n    \"fax\" : \"021234567\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"status\" : \"1\",\r\n    \"remark\" : \"หมายเหตุ\",\r\n    \"createId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"code\" : \"STA\",\r\n    \"no\" : \"00001\",\r\n    \"name\" : \"SRI TRANG AGRO\",\r\n    \"phone\" : \"0817669019\",\r\n    \"fax\" : \"021234567\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"status\" : 1,\r\n    \"remark\" : \"หมายเหตุ\",\r\n    \"createId\" : \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -901,7 +1179,14 @@
 					"name": "employeeList",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ3ZjE2NjhiLWI3ZDYtNGUwOC04N2NkLTU4NzI0NmRiY2IyYiIsImlhdCI6MTYzNDU2ODA1OCwiZXhwIjoxNjM2Mjk2MDU4fQ.VEzqqYxS4I-dLy6zObAk6dyDNMunb3zBOS0Cw71LT30",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/employee/list",
 							"protocol": "http",
@@ -952,10 +1237,17 @@
 					"name": "employeeCreate",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ3ZjE2NjhiLWI3ZDYtNGUwOC04N2NkLTU4NzI0NmRiY2IyYiIsImlhdCI6MTYzNDU2ODA1OCwiZXhwIjoxNjM2Mjk2MDU4fQ.VEzqqYxS4I-dLy6zObAk6dyDNMunb3zBOS0Cw71LT30",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"no\" : \"001\",\r\n    \"name\" : \"Kitituch\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"phone\" : \"0894496362\",\r\n    \"fax\" : \"021234567\",\r\n    \"companyId\" : \"COM01\",\r\n    \"branch\" : \"B001\",\r\n    \"depart\" : \"D01\",\r\n    \"userLogin\" : \"admin\",\r\n    \"password\" : \"12301230\",\r\n    \"createId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"no\" : \"001\",\r\n    \"name\" : \"Kitituch\",\r\n    \"address\" : \"ที่อยู่\",\r\n    \"phone\" : \"0894496362\",\r\n    \"fax\" : \"021234567\",\r\n    \"companyId\" : \"COM01\",\r\n    \"branch\" : \"B001\",\r\n    \"depart\" : \"D01\",\r\n    \"userLogin\" : \"kitituch\",\r\n    \"password\" : \"12301230\",\r\n    \"createId\" : \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1479,6 +1771,644 @@
 			]
 		},
 		{
+			"name": "Price",
+			"item": [
+				{
+					"name": "priceList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/price/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"000003\",\r\n    \"from\" : \"Kantang Trang\",\r\n    \"groupFrom\" : \"Truck\",\r\n    \"to\" : \"Penang Port\",\r\n    \"groupTo\" : \"Ship\",\r\n    \"priceDate\" : \"2021-09-20\",\r\n    \"typeId\" : \"e02de757-a6cf-406a-a8b0-fd0eeb92838b\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"6c0a2ce0-1e3b-4601-b418-28fa041b0953\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"61683f41-37b8-44fa-a484-00374d34a6c6\",\r\n    \"no\" : \"000001\",\r\n    \"from\" : \"Kantang Trang\",\r\n    \"groupFrom\" : \"Truck\",\r\n    \"to\" : \"Penang Port\",\r\n    \"groupTo\" : \"Ship\",\r\n    \"priceDate\" : \"2021-09-20\",\r\n    \"typeId\" : \"e02de757-a6cf-406a-a8b0-fd0eeb92838b\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"61683f41-37b8-44fa-a484-00374d34a6c6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDetailList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"6c0a2ce0-1e3b-4601-b418-28fa041b0953\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/detail/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"detail",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDetailCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"priceId\" : \"6c0a2ce0-1e3b-4601-b418-28fa041b0953\",\r\n    \"tranId\" : \"6b3a75d5-5d73-4697-8c04-bb44f8651c0d\",\r\n    \"amount\" : \"500\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/detail/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"detail",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDetailUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1407234b-0d22-4b4a-94c4-96e0debbaf6d\",\r\n    \"priceId\" : \"6c0a2ce0-1e3b-4601-b418-28fa041b0953\",\r\n    \"tranId\" : \"6b3a75d5-5d73-4697-8c04-bb44f8651c0d\",\r\n    \"amount\" : \"500\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/detail/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"detail",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDetailDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1407234b-0d22-4b4a-94c4-96e0debbaf6d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/detail/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"detail",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "priceDetailDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"82f59c84-9656-4959-8019-25fb3f2bc8c4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/price/detail/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"price",
+								"detail",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotation",
+			"item": [
+				{
+					"name": "quotationList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTQwMzY0OSwiZXhwIjoxNjM3MTMxNjQ5fQ.zQFYSn9UoD_3HG9-rEZ_Vfew--jzmQmpcAiMWeFx7Bk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\" : \"000003\",\r\n    \"quoDate\" : \"2021-09-20\",\r\n    \"cusId\" : \"174b0ee2-f080-479b-80eb-4b6958f64f2c\",\r\n    \"facId\" : \"049172f2-2aac-4f4e-b224-2f485814e75c\",\r\n    \"tel\" : \"0811234567\",\r\n    \"fax\" : \"0811234567\",\r\n    \"email\" : \"montague.a@gmail.com\",\r\n    \"contractName\" : \"Kitituch\",\r\n    \"remark\" : \"remark\",\r\n    \"quoDateFrom\" : \"2021-09-20\",\r\n    \"quoDateTo\" : \"2021-09-20\",\r\n    \"locationFrom\" : \"BKK\",\r\n    \"groupFrom\" : \"1\",\r\n    \"locationTo\" : \"KKB\",\r\n    \"groupTo\" : \"1\",\r\n    \"note\" : \"note\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1908c16e-64c7-4334-9df5-1ce701e612b8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1908c16e-64c7-4334-9df5-1ce701e612b8\",\r\n    \"no\" : \"000003\",\r\n    \"quoDate\" : \"2021-09-20\",\r\n    \"cusId\" : \"1\",\r\n    \"facId\" : \"1\",\r\n    \"tel\" : \"0815555555\",\r\n    \"fax\" : \"0811234567\",\r\n    \"email\" : \"montague.a@gmail.com\",\r\n    \"contractName\" : \"Kitituch\",\r\n    \"remark\" : \"remark\",\r\n    \"quoDateFrom\" : \"2021-09-20\",\r\n    \"quoDateTo\" : \"2021-09-20\",\r\n    \"locationFrom\" : \"BKK\",\r\n    \"groupFrom\" : \"1\",\r\n    \"locationTo\" : \"KKB\",\r\n    \"groupTo\" : \"1\",\r\n    \"note\" : \"note\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"61683f41-37b8-44fa-a484-00374d34a6c6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDetailList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1908c16e-64c7-4334-9df5-1ce701e612b8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/detail/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"detail",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDetailCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quoId\" : \"1908c16e-64c7-4334-9df5-1ce701e612b8\",\r\n    \"priceId\" : \"2a727320-3c09-42e2-b2a0-32d3e8d82f2a\",\r\n    \"containerId\" : \"21cd2d39-cbba-4190-aaf6-253968df3e79\",\r\n    \"qty\" : \"2\",\r\n    \"amount\" : \"500\",\r\n    \"discount\" : \"200\",\r\n    \"total\" : \"800\",\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/detail/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"detail",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDetailUpdate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"92700988-e232-4a83-8d51-cdea5c0b0b7f\",\r\n    \"priceId\" : \"2a727320-3c09-42e2-b2a0-32d3e8d82f2a\",\r\n    \"containerId\" : \"21cd2d39-cbba-4190-aaf6-253968df3e79\",\r\n    \"qty\" : \"2\",\r\n    \"amount\" : \"500\",\r\n    \"discount\" : \"200\",\r\n    \"total\" : \"800\",\r\n    \"ModId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/detail/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"detail",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDetailDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"25711559-9d2a-4277-a4ac-a2f9155ec999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/detail/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"detail",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDetailDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"f5e3f467-1bea-430b-9558-215b367c1e2c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/detail/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"detail",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quotationDuplicate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1908c16e-64c7-4334-9df5-1ce701e612b8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotation/duplicate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotation",
+								"duplicate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Terms",
 			"item": [
 				{
@@ -1634,7 +2564,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"countryId\" : 2,\r\n    \"createId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"countryId\" : 2,\r\n    \"createId\" : \"1\",\r\n    \"pol\" : \"32a46862-cc3f-416f-bbd4-2e8bd6bd1d70\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1664,7 +2594,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\" : \"a56d51fb-bd4d-4c86-bc64-6f7992509c29\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"countryId\" : 1,\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"id\" : \"1560e35c-65af-43d4-8dad-cc7f74070e89\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"countryId\" : 1,\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\",\r\n    \"pol\" : \"32a46862-cc3f-416f-bbd4-2e8bd6bd1d70\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1920,13 +2850,13 @@
 			"name": "Transport",
 			"item": [
 				{
-					"name": "termsCreate",
+					"name": "transportCreate",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"no\" : \"terms0001\",\r\n    \"name\" : \"terms test\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"groupId\" : \"G001\",    \r\n    \"no\" : \"00012\",\r\n    \"name\" : \"terms test\",\r\n    \"companyId\" : \"COM01\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1934,7 +2864,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/terms/create",
+							"raw": "http://localhost:3000/api/transport/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1942,7 +2872,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"terms",
+								"transport",
 								"create"
 							]
 						}
@@ -1950,13 +2880,13 @@
 					"response": []
 				},
 				{
-					"name": "termsUpdate",
+					"name": "transportUpdate",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\" : \"22e9ae23-f88c-487e-8cb5-efeb5a8f1cba\",\r\n    \"no\" : \"forwarder001\",\r\n    \"name\" : \"forwarder test\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
+							"raw": "{\r\n    \"id\" : \"6b3a75d5-5d73-4697-8c04-bb44f8651c0d\",\r\n    \"groupId\" : \"G001\",    \r\n    \"no\" : \"00012\",\r\n    \"name\" : \"terms test\",\r\n    \"companyId\" : \"COM01\",\r\n    \"status\" : 1,\r\n    \"ModId\" : \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1964,7 +2894,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/terms/update",
+							"raw": "http://localhost:3000/api/transport/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1972,7 +2902,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"terms",
+								"transport",
 								"update"
 							]
 						}
@@ -1980,13 +2910,13 @@
 					"response": []
 				},
 				{
-					"name": "termsDelete",
+					"name": "transportDelete",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"raw": "{\r\n    \"id\" : \"98a90cb9-39a1-423c-af84-0f9d703fe847\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1994,7 +2924,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/terms/delete",
+							"raw": "http://localhost:3000/api/transport/delete",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2002,7 +2932,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"terms",
+								"transport",
 								"delete"
 							]
 						}
@@ -2010,13 +2940,13 @@
 					"response": []
 				},
 				{
-					"name": "termsDetail",
+					"name": "transportDetail",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\" : \"aced1ef3-e54a-4399-bd86-6de63695335c\"\r\n}",
+							"raw": "{\r\n    \"id\" : \"6b3a75d5-5d73-4697-8c04-bb44f8651c0d\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2024,7 +2954,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/terms/detail",
+							"raw": "http://localhost:3000/api/transport/detail",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2032,7 +2962,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"terms",
+								"transport",
 								"detail"
 							]
 						}
@@ -2040,12 +2970,12 @@
 					"response": []
 				},
 				{
-					"name": "termsList",
+					"name": "transportList",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/terms/list",
+							"raw": "http://localhost:3000/api/transport/list",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2053,7 +2983,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"terms",
+								"transport",
 								"list"
 							]
 						}
@@ -2209,13 +3139,545 @@
 			]
 		},
 		{
+			"name": "WorkOrder",
+			"item": [
+				{
+					"name": "workorderCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"workorderNo\" : \"WOK6409160003\",\r\n    \"cusId\" : \"174b0ee2-f080-479b-80eb-4b6958f64f2c\",\r\n    \"assDate\" : \"2021/11/15\",\r\n    \"bookingNo\" : \"86609067\",\r\n    \"factoryId\" : \"049172f2-2aac-4f4e-b224-2f485814e75c\",\r\n    \"etdPol\" : \"2021/11/15\",\r\n    \"closeingDate\" : \"2021/11/30\",\r\n    \"closeingTime\" : \"2021/11/30 12:12:12\",\r\n    \"pickupDate\" : \"2021/11/16\",\r\n    \"ladenEtd\" : \"2021/11/30\",\r\n    \"det\" : \"\",\r\n    \"dem\" : \"\",\r\n    \"com\" : \"\",\r\n    \"freetimeFrom\" : \"\",\r\n    \"freetimeTo\" : \"\",\r\n    \"status\" : 1,\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workorder/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workorder",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workorderUpdate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"26807958-321a-4f30-a3c9-9d16e30d7056\",\r\n    \"workorderNo\" : \"WOK6409160003\",\r\n    \"cusId\" : \"174b0ee2-f080-479b-80eb-4b6958f64f2c\",\r\n    \"assDate\" : \"2021/11/14\",\r\n    \"bookingNo\" : \"86609067\",\r\n    \"factoryId\" : \"049172f2-2aac-4f4e-b224-2f485814e75c\",\r\n    \"etdPol\" : \"2021/11/15\",\r\n    \"closeingDate\" : \"2021/11/30\",\r\n    \"closeingTime\" : \"2021/11/30 12:12:12\",\r\n    \"pickupDate\" : \"2021/11/16\",\r\n    \"ladenEtd\" : \"2021/11/30\",\r\n    \"det\" : \"\",\r\n    \"dem\" : \"\",\r\n    \"com\" : \"\",\r\n    \"freetimeFrom\" : \"\",\r\n    \"freetimeTo\" : \"\",\r\n    \"status\" : 1,\r\n    \"ModID\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workorder/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workorder",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workorderDelete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workorder/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workorder",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workorderDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"26807958-321a-4f30-a3c9-9d16e30d7056\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/workorder/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workorder",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workorderList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/workorder/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"workorder",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SaleOrder",
+			"item": [
+				{
+					"name": "saleorderCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cusId\" : \"e171d7b6-93eb-43d6-b631-0564fa761d70\",\r\n    \"quotationId\" : \"dfa35348-6eda-4e78-a4f8-5f92bd2a5ae3\",\r\n    \"shipperInvoiceNo\" : \"IN123456\",\r\n    \"shipperRefNo\" : \"REF123456\",\r\n    \"shipperSiNo\" : \"SI123456\",\r\n    \"containerId\" : \"21cd2d39-cbba-4190-aaf6-253968df3e79\",\r\n    \"qty\" : \"10\",\r\n    \"etdPol\" : \"2021/11/10\",\r\n    \"etdCloseingDate\" : \"2021/11/30\",\r\n    \"etdCloseingTime\" : \"01.00 HRS\",\r\n    \"shippingBookingNo\" : \"86609067\",\r\n    \"shippingLinerId\" : \"a56d51fb-bd4d-4c86-bc64-6f7992509c29\",\r\n    \"shippingFreightForId\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\",\r\n    \"shippingContainerReqCheck\" : 1,\r\n    \"shippingContainerRequired\" : \"Stock\",\r\n    \"shippingCommodityId\" : \"8ffa5df3-5003-4c3f-8752-4feb9c9c75a3\",\r\n    \"shippingPackaging\" : \"packaging\",\r\n    \"shippingGrade\" : \"A\",\r\n    \"shippingApply\" : 1,\r\n    \"freePolDet\" : \"\",\r\n    \"freePolDem\" : \"\",\r\n    \"freePolCom\" : \"\",\r\n    \"pickupChoose\" : \"Truck\",\r\n    \"pickupEmpty\" : \"Empty\",\r\n    \"pickupFirst\" : \"2021/11/10\",\r\n    \"pickupDepotsId\" : \"1a3527ab-78c5-411d-86a4-62b6f4f24f7b\",\r\n    \"pickupVoyageNo\" : \"voy123456\",\r\n    \"pickupMt\" : \"mt123456\",\r\n    \"returnDate\" : \"2021/11/20\",\r\n    \"terminalId\" : \"1560e35c-65af-43d4-8dad-cc7f74070e89\",\r\n    \"countryId\" : \"1\",\r\n    \"portofDischarge\" : \"Balihai, Pattaya\",\r\n    \"podTerminal\" : \"\",\r\n    \"firstVessel\" : \"Ever Build V.1326-021N\",\r\n    \"firstTranshipment\" : \"Thailand\",\r\n    \"secondVessel\" : \"\",\r\n    \"secondTranshipment\" : \"\",\r\n    \"thirdVessel\" : \"\",\r\n    \"thirdTranshipment\" : \"\",\r\n    \"etaPod\" : \"\",\r\n    \"freightTerms\" : \"\",\r\n    \"incoTerms\" : \"\",\r\n    \"consigTime\" : \"\",\r\n    \"cutOffSl\" : \"\",\r\n    \"cutOffVgm\" : \"\",\r\n    \"fumigation\" : \"\",\r\n    \"phytoCert\" : \"\",\r\n    \"status\" : \"\",\r\n    \"docMt\" : \"\",\r\n    \"docCntr\" : \"\",\r\n    \"docInv\" : \"\",\r\n    \"docExport\" : \"\",\r\n    \"docSi\" : \"\",\r\n    \"docVmg\" : \"\",\r\n    \"docCarco\" : \"\",\r\n    \"createId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderUpdate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"01a0dc11-40a5-4189-9079-c87ede0cde42\",\r\n    \"cusId\" : \"e171d7b6-93eb-43d6-b631-0564fa761d70\",\r\n    \"quotationId\" : \"dfa35348-6eda-4e78-a4f8-5f92bd2a5ae3\",\r\n    \"shipperInvoiceNo\" : \"IN123456\",\r\n    \"shipperRefNo\" : \"REF123456\",\r\n    \"shipperSiNo\" : \"SI123456\",\r\n    \"containerId\" : \"21cd2d39-cbba-4190-aaf6-253968df3e79\",\r\n    \"qty\" : \"20\",\r\n    \"etdPol\" : \"2021/11/10\",\r\n    \"etdCloseingDate\" : \"2021/11/30\",\r\n    \"etdCloseingTime\" : \"01.00 HRS\",\r\n    \"shippingBookingNo\" : \"86609067\",\r\n    \"shippingLinerId\" : \"a56d51fb-bd4d-4c86-bc64-6f7992509c29\",\r\n    \"shippingFreightForId\" : \"79623878-7f7a-49b6-a3c2-9ff530fa47f2\",\r\n    \"shippingContainerReqCheck\" : 1,\r\n    \"shippingContainerRequired\" : \"Stock\",\r\n    \"shippingCommodityId\" : \"8ffa5df3-5003-4c3f-8752-4feb9c9c75a3\",\r\n    \"shippingPackaging\" : \"packaging\",\r\n    \"shippingGrade\" : \"A\",\r\n    \"shippingApply\" : 1,\r\n    \"freePolDet\" : \"\",\r\n    \"freePolDem\" : \"\",\r\n    \"freePolCom\" : \"\",\r\n    \"pickupChoose\" : \"Truck\",\r\n    \"pickupEmpty\" : \"Empty\",\r\n    \"pickupFirst\" : \"2021/11/10\",\r\n    \"pickupDepotsId\" : \"1a3527ab-78c5-411d-86a4-62b6f4f24f7b\",\r\n    \"pickupVoyageNo\" : \"voy123456\",\r\n    \"pickupMt\" : \"mt123456\",\r\n    \"returnDate\" : \"2021/11/20\",\r\n    \"terminalId\" : \"1560e35c-65af-43d4-8dad-cc7f74070e89\",\r\n    \"countryId\" : \"1\",\r\n    \"portofDischarge\" : \"Balihai, Pattaya\",\r\n    \"podTerminal\" : \"\",\r\n    \"firstVessel\" : \"Ever Build V.1326-021N\",\r\n    \"firstTranshipment\" : \"Thailand\",\r\n    \"secondVessel\" : \"\",\r\n    \"secondTranshipment\" : \"\",\r\n    \"thirdVessel\" : \"\",\r\n    \"thirdTranshipment\" : \"\",\r\n    \"etaPod\" : \"\",\r\n    \"freightTerms\" : \"\",\r\n    \"incoTerms\" : \"\",\r\n    \"consigTime\" : \"\",\r\n    \"cutOffSl\" : \"\",\r\n    \"cutOffVgm\" : \"\",\r\n    \"fumigation\" : \"\",\r\n    \"phytoCert\" : \"\",\r\n    \"status\" : \"\",\r\n    \"docMt\" : \"\",\r\n    \"docCntr\" : \"\",\r\n    \"docInv\" : \"\",\r\n    \"docExport\" : \"\",\r\n    \"docSi\" : \"\",\r\n    \"docVmg\" : \"\",\r\n    \"docCarco\" : \"\",\r\n    \"ModId\" : \"1\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"01a0dc11-40a5-4189-9079-c87ede0cde42\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderMtCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"soId\" : \"01a0dc11-40a5-4189-9079-c87ede0cde42\",\r\n    \"voyNo\" : \"voy123456\",\r\n    \"mtEta\" : \"mtEta\",\r\n    \"mtPick\" : \"myPick\",\r\n    \"status\" : 1,\r\n    \"createId\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/mt/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"mt",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderMtDelete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"8b0a11c4-2cd5-4710-9024-41daec0b3e5a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/mt/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"mt",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderPlanCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"soId\" : \"01a0dc11-40a5-4189-9079-c87ede0cde42\",\r\n    \"spDate\" : \"spDate\",\r\n    \"spFactory\" : \"spFactory\",\r\n    \"containerId\" : \"21cd2d39-cbba-4190-aaf6-253968df3e79\",\r\n    \"qty\" : 10,\r\n    \"status\" : 1,\r\n    \"createId\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/plan/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"plan",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderPlanDelete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"41705894-90bc-48ee-910f-481d780e0afc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/plan/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"plan",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderLadenCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"soId\" : \"01a0dc11-40a5-4189-9079-c87ede0cde42\",\r\n    \"voyNo\" : \"voy123456\",\r\n    \"etdDate\" : \"etdDate\",\r\n    \"choose\" : \"TRUCK\",\r\n    \"status\" : 1,\r\n    \"createId\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/laden/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"laden",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderLadenDelete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"5920eacd-1b1b-4da5-a7c9-592e2a63a2ff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/laden/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"laden",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saleorderList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxMTAzODg4LWFmODUtNGQ0MC1iOTNmLWQwZTc0ZDkyOTlmNCIsImlhdCI6MTYzNTk0NDUwMiwiZXhwIjoxNjM3NjcyNTAyfQ.c08H2Gc8XyUdods6whf7z11xWcMW6J1jktXEX2EEuc8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/saleorder/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saleorder",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "login",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"12301230\"\r\n}",
+					"raw": "{\r\n    \"username\" : \"kitituch\",\r\n    \"password\" : \"12301230\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

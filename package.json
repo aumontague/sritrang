@@ -14,12 +14,16 @@
     "express": "^4.17.1",
     "http-error": "0.0.6",
     "jsonwebtoken": "^8.5.1",
+    "localStorage": "^1.0.4",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.0",
+    "node-localstorage": "^2.2.1",
+    "swagger-ui-express": "^4.1.6",
     "uuid": "^8.3.2",
-    "xlsx-js-style": "^1.0.0"
+    "xlsx-js-style": "^1.0.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {},
   "repository": {

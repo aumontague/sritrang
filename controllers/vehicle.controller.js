@@ -51,7 +51,7 @@ module.exports = (app) => {
 
     app.post('/api/vehicle/delete', function(req, res) {
         var dataPost = req.body;        
-        var result = employee.vehicleDelete(req, dataPost, _).then(function(result) {
+        var result = vehicle.vehicleDelete(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);

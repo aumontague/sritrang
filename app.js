@@ -30,23 +30,38 @@ app.get('/', (req, res) => {
 })
 
 require('./controllers/login.controller.js')(app);
-require('./controllers/customer.controller.js')(app);
-require('./controllers/employee.controller.js')(app);
-require('./controllers/company.controller.js')(app);
-require('./controllers/commodity.controller.js')(app);
-require('./controllers/forwarder.controller.js')(app);
-require('./controllers/terms.controller.js')(app);
-require('./controllers/transshipment.controller.js')(app);
-require('./controllers/polpod.controller.js')(app);
-require('./controllers/liners.controller.js')(app);
-require('./controllers/terminal.controller.js')(app);
-require('./controllers/depots.controller.js')(app);
-require('./controllers/container.controller.js')(app);
-require('./controllers/vehicle.controller.js')(app);
-require('./controllers/branch.controller.js')(app);
-require('./controllers/transport.controller.js')(app);
-require('./controllers/price.controller.js')(app);
-require('./controllers/quotation.controller.js')(app);
+
+app.use(function (req, res, next) {
+    if(req.headers.token == '' || req.headers.token == undefined){
+        res.json({
+            status : "false",
+            code : 401,
+            message : "no token"
+        });        
+    }else{
+        require('./controllers/customer.controller.js')(app);
+        require('./controllers/employee.controller.js')(app);
+        require('./controllers/company.controller.js')(app);
+        require('./controllers/commodity.controller.js')(app);
+        require('./controllers/forwarder.controller.js')(app);
+        require('./controllers/terms.controller.js')(app);
+        require('./controllers/transshipment.controller.js')(app);
+        require('./controllers/polpod.controller.js')(app);
+        require('./controllers/liners.controller.js')(app);
+        require('./controllers/terminal.controller.js')(app);
+        require('./controllers/depots.controller.js')(app);
+        require('./controllers/container.controller.js')(app);
+        require('./controllers/vehicle.controller.js')(app);
+        require('./controllers/branch.controller.js')(app);
+        require('./controllers/transport.controller.js')(app);
+        require('./controllers/price.controller.js')(app);
+        require('./controllers/quotation.controller.js')(app);
+        require('./controllers/saleorder.controller.js')(app);
+        require('./controllers/workorder.controller.js')(app);
+        next()
+    }
+})
+
 
 http.listen(env.app.port, function() {
     console.log(env.app.url + ":" + env.app.port);
