@@ -10,7 +10,7 @@ class price {
 
     priceList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT p.PriceNo, p.LocationFrom, p.LocationTo, p.Status, e.EmpName, e.EmpLastName, SUM(pd.Amount) FROM Price p INNER JOIN Employee e ON p.CreateId = e.EmpId INNER JOIN PriceDetail pd ON p.PriceId = pd.PriceId ORDER BY p.CreateDate DESC'
+            var _query = 'SELECT p.PriceId, p.PriceNo, p.LocationFrom, p.LocationTo, p.Status, e.EmpName, e.EmpLastName, SUM(pd.Amount) FROM Price p INNER JOIN Employee e ON p.CreateId = e.EmpId INNER JOIN PriceDetail pd ON p.PriceId = pd.PriceId ORDER BY p.CreateDate DESC'
             this.db.query(_query) 
             .then(resp => {
                 var result = {

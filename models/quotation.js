@@ -10,7 +10,7 @@ class quotation {
 
     quotationList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT q.QuotationDate, q.QuotationNo, c.CustomerName, SUM(qd.TotalAmount) as Amount, SUM(qd.Qty) as Qty FROM Quotation q INNER JOIN Customer c ON q.CustomerId = c.CustomerId INNER JOIN QuotationDetail qd ON q.QuotationId = qd.QuotationId ORDER BY q.CreateDate DESC'
+            var _query = 'SELECT q.QuotationId, q.QuotationDate, q.QuotationNo, c.CustomerName, SUM(qd.TotalAmount) as Amount, SUM(qd.Qty) as Qty FROM Quotation q INNER JOIN Customer c ON q.CustomerId = c.CustomerId INNER JOIN QuotationDetail qd ON q.QuotationId = qd.QuotationId ORDER BY q.CreateDate DESC'
             this.db.query(_query) 
             .then(resp => {
                 var result = {
@@ -46,8 +46,8 @@ class quotation {
 
     quotationInsert(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'INSERT INTO Quotation(QuotationId, QuotationNo, QuotationDate, CustomerId, FactoryId, Telephone, Fax, Email, ContractName, Remark, QuotationDateFrom, QuotationDateTo, EmpSalesId, LocationFrom, GroupFrom, LocationTo, GroupTo, InternalNote, Status, CreateID, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
-            this.db.query(_query, [uuid.v4(), dataPost.no, dataPost.quoDate, dataPost.cusId, dataPost.facId, dataPost.tel, dataPost.fax, dataPost.email, dataPost.contractName, dataPost.remark, dataPost.quoDateFrom, dataPost.quoDateTo, dataPost.saleId, dataPost.locationFrom, dataPost.groupFrom, dataPost.locationTo, dataPost.groupTo, dataPost.note, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
+            var _query = 'INSERT INTO Quotation(QuotationId, QuotationDraftNo, QuotationDate, CustomerId, FactoryId, Telephone, Fax, Email, ContractName, Remark, QuotationDateFrom, QuotationDateTo, EmpSalesId, LocationFrom, GroupFrom, LocationTo, GroupTo, InternalNote, Status, CreateID, CreateDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+            this.db.query(_query, [uuid.v4(), dataPost.draftNo, dataPost.quoDate, dataPost.cusId, dataPost.facId, dataPost.tel, dataPost.fax, dataPost.email, dataPost.contractName, dataPost.remark, dataPost.quoDateFrom, dataPost.quoDateTo, dataPost.saleId, dataPost.locationFrom, dataPost.groupFrom, dataPost.locationTo, dataPost.groupTo, dataPost.note, dataPost.status, dataPost.createId, moment().format("YYYY-MM-DD HH:mm:ss")]) 
             .then(resp => {
                 if(resp.affectedRows > 0){
                     var result = {
@@ -71,9 +71,9 @@ class quotation {
 
     quotationUpdate(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'UPDATE Quotation SET QuotationNo = ?, QuotationDate = ?, CustomerId = ?, FactoryId = ?, Telephone = ?, Fax = ?, Email = ?, ContractName = ?, Remark = ?, QuotationDateFrom = ?, QuotationDateTo = ?, EmpSalesId = ?, LocationFrom = ?, GroupFrom = ?, LocationTo = ?, GroupTo = ?, InternalNote = ?, Status = ?, ModID = ?, ModDate = ? WHERE QuotationId = ?'
+            var _query = 'UPDATE Quotation SET QuotationDraftNo = ?, QuotationDate = ?, CustomerId = ?, FactoryId = ?, Telephone = ?, Fax = ?, Email = ?, ContractName = ?, Remark = ?, QuotationDateFrom = ?, QuotationDateTo = ?, EmpSalesId = ?, LocationFrom = ?, GroupFrom = ?, LocationTo = ?, GroupTo = ?, InternalNote = ?, Status = ?, ModID = ?, ModDate = ? WHERE QuotationId = ?'
             var value = [
-                dataPost.no, dataPost.quoDate, dataPost.cusId, dataPost.facId, dataPost.tel, dataPost.fax, dataPost.email, dataPost.contractName, dataPost.remark, dataPost.quoDateFrom, dataPost.quoDateTo, dataPost.saleId, dataPost.locationFrom, dataPost.groupFrom, dataPost.locationTo, dataPost.groupTo, dataPost.note, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
+                dataPost.draftNo, dataPost.quoDate, dataPost.cusId, dataPost.facId, dataPost.tel, dataPost.fax, dataPost.email, dataPost.contractName, dataPost.remark, dataPost.quoDateFrom, dataPost.quoDateTo, dataPost.saleId, dataPost.locationFrom, dataPost.groupFrom, dataPost.locationTo, dataPost.groupTo, dataPost.note, dataPost.status, dataPost.ModId, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id 
             ]
             this.db.query(_query, value) 
             .then(resp => {
@@ -219,6 +219,31 @@ class quotation {
             this.db.query(_query, [dataPost.id]) 
             .then(resp => {
                 resolve(resp)
+            }).catch(err => {
+                reject({"status" : false})
+                console.log(err);
+            }) 
+        });
+    }
+
+    quotationAprrove(req, dataPost, _) {
+        return new Promise((resolve, reject) => {
+            var _query = 'UPDATE Quotation SET QuotationNo = ?, ModID = ?, Status = ?, ModDate = ? WHERE QuotationId = ?'
+            this.db.query(_query, [dataPost.no, dataPost.ModId, 2, moment().format("YYYY-MM-DD HH:mm:ss"), dataPost.id]) 
+            .then(resp => {
+                if(resp.affectedRows > 0){
+                    var result = {
+                        "status"    : true,
+                        "text"      : "Success"
+                    }
+                    resolve(result)
+                }else{
+                    var result = {
+                        "status"    : false,
+                        "text"      : "Fail"
+                    }
+                    reject(result)
+                }
             }).catch(err => {
                 reject({"status" : false})
                 console.log(err);

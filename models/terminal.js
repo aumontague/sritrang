@@ -10,7 +10,7 @@ class terminal {
 
     terminalList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT t.TerminalNo, t.TerminalName, t.Status, c.CountryName, pp.PolPodName FROM Terminal t INNER JOIN Country c ON t.CountryId = c.CountryId INNER JOIN PolPod pp ON t.PolPodId = pp.PolPodId ORDER BY t.CreateDate DESC'
+            var _query = 'SELECT t.TerminalId, t.TerminalNo, t.TerminalName, t.Status, c.CountryName, pp.PolPodName FROM Terminal t INNER JOIN Country c ON t.CountryId = c.CountryId INNER JOIN PolPod pp ON t.PolPodId = pp.PolPodId ORDER BY t.CreateDate DESC'
             this.db.query(_query) 
             .then(resp => {
                 resolve(resp)

@@ -21,7 +21,7 @@ class branch {
         });
     }
 
-    BranchInformationDetail(req, dataPost, _) {
+    branchInformationDetail(req, dataPost, _) {
         return new Promise((resolve, reject) => { 
             var _query = 'select * from Branch where BranchId = ?'
             this.db.query(_query, [dataPost.id]) 

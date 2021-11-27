@@ -10,7 +10,7 @@ class transport {
 
     transportList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT t.TransportNo, t.TransportName, t.Status, g.GroupName, c.CompanyName FROM Transport t INNER JOIN GroupShipment g ON t.GroupId = g.GroupId INNER JOIN Company c ON t.CompanyId = c.CompanyId ORDER BY t.CreateDate DESC'
+            var _query = 'SELECT t.TransportId, t.TransportNo, t.TransportName, t.Status, g.GroupName, c.CompanyName FROM Transport t INNER JOIN GroupShipment g ON t.GroupId = g.GroupId INNER JOIN Company c ON t.CompanyId = c.CompanyId ORDER BY t.CreateDate DESC'
             this.db.query(_query) 
             .then(resp => {
                 resolve(resp)

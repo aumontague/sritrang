@@ -1,6 +1,7 @@
 const express = require('express')
 const env = require('./config/env.json');
 const app = express()
+const cors = require('cors')
 const http = require('http').Server(app);
 const bodyParser = require('body-parser');
 const Database = require('./models/Database');
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
     next()
 })
 
-
+app.use(cors())
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
@@ -58,6 +59,8 @@ app.use(function (req, res, next) {
         require('./controllers/quotation.controller.js')(app);
         require('./controllers/saleorder.controller.js')(app);
         require('./controllers/workorder.controller.js')(app);
+        require('./controllers/tagerror.controller.js')(app);
+        require('./controllers/master.controller.js')(app);
         next()
     }
 })

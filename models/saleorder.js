@@ -11,7 +11,7 @@ class saleorder {
 
     saleorderList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT so.SoNumber, so.EtdPol, so.EtdCloseingDate, so.ShippingBookingNo, so.ShipperInvoiceNo, so.Status, c.CustomerName FROM SalesOrder so INNER JOIN Customer c ON so.CustomerId = c.CustomerId WHERE so.Status = 1 ORDER BY so.CreateDate DESC'
+            var _query = 'SELECT so.SoId, so.SoNumber, so.EtdPol, so.EtdCloseingDate, so.ShippingBookingNo, so.ShipperInvoiceNo, so.Status, c.CustomerName FROM SalesOrder so INNER JOIN Customer c ON so.CustomerId = c.CustomerId WHERE so.Status = 1 ORDER BY so.CreateDate DESC'
             this.db.query(_query) 
             .then(resp => {
                 resolve(resp)

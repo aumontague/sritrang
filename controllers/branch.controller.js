@@ -56,7 +56,7 @@ module.exports = (app) => {
     app.post('/api/branch/detail', function(req, res) {
         var dataPost = req.body;
         
-        var result = branch.BranchInformationDetail(req, dataPost, _).then(function(result) {
+        var result = branch.branchInformationDetail(req, dataPost, _).then(function(result) {
             res.json(result);
         }).catch(function(error) {
             res.send('Error: ' + error);

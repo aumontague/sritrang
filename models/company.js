@@ -10,7 +10,7 @@ class company {
 
     companyList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT CompanyCode, CompanyName, Status FROM Company'
+            var _query = 'SELECT CompanyId, CompanyCode, CompanyName, Status FROM Company'
             this.db.query(_query) 
             .then(resp => {
                 resolve(resp)

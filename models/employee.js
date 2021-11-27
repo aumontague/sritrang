@@ -121,6 +121,5 @@ class employee {
         });
     }
 
-
 }
 exports.employee = employee;

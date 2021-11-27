@@ -10,7 +10,7 @@ class workorder {
 
     workorderList(req, dataPost, _) {
         return new Promise((resolve, reject) => {
-            var _query = 'SELECT wo.WorkOrderNo, c.CustomerName FROM WorkOrder wo INNER JOIN Customer c ON wo.CustomerId = c.CustomerId'
+            var _query = 'SELECT wo.WorkOrderId, wo.WorkOrderNo, c.CustomerName FROM WorkOrder wo INNER JOIN Customer c ON wo.CustomerId = c.CustomerId'
             this.db.query(_query) 
             .then(resp => {
                 resolve(resp)

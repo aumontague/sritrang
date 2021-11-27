@@ -17,7 +17,13 @@ module.exports = (app) => {
                 var pass = checkPassword(dataPost.password,result[0]['Password']).then(function(status) {
                     if(status == true){
                         var insLog = login.insLogLogin(req, dataPost, _, result[0]).then(function(resp) {
-                            res.json(resp);
+                            var data = {
+                                "code"      : 200,
+                                "status"    : true,
+                                "data"      : result[0],
+                                "token"      : resp
+                            }
+                            res.json(data);
                         }).catch(function(error) {
                             res.send('Error: ' + error);
                         });
